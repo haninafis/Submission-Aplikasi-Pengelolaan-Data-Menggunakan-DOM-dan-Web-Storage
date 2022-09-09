@@ -90,7 +90,9 @@ function makeBook(bookObject){
         redButton.innerText = 'Hapus Buku';
 
         redButton.addEventListener('click', function(){
-            removeBookFromCompleted(bookObject.id);
+            if (confirm('Apakah anda yakin ingin menghapus buku "' + bookObject.book + '" dari Bookshelf') == true) {
+                removeBookFromCompleted(bookObject.id);
+            } 
         });
 
         buttonContainer.append(greenButton, redButton);
@@ -109,7 +111,9 @@ function makeBook(bookObject){
         redButton.innerText = 'Hapus Buku';
 
         redButton.addEventListener('click', function(){
-            removeBookFromCompleted(bookObject.id);
+            if (confirm('Apakah anda yakin ingin menghapus buku "' + bookObject.book + '" dari Bookshelf') == true) {
+                removeBookFromCompleted(bookObject.id);
+            }
         });
 
         buttonContainer.append(greenButton, redButton);
@@ -200,3 +204,4 @@ function loadDataFromStorage(){
     }
     document.dispatchEvent(new Event(RENDER_EVENT));
 }
+
