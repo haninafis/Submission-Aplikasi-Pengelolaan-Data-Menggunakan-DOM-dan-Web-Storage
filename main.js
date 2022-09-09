@@ -72,7 +72,7 @@ function makeBook(bookObject){
     bookContainer.append(textBook, textAuthor, textYear, buttonContainer);
     bookContainer.setAttribute('id', `book-${bookObject.id}`);
 
-    if (makeBook.isCompleted){
+    if (bookObject.isCompleted){
         const greenButton = document.createElement('button');
         greenButton.classList.add('green');
         greenButton.innerText = 'Belum Selesai Dibaca';
